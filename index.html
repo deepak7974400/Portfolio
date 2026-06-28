@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Deepak Sahu — Java Full Stack Developer with 3+ years of experience in Spring Boot, Microservices, REST APIs, AWS, and modern backend development." />
+  <meta name="keywords" content="Deepak Sahu, Java Developer, Spring Boot, Full Stack Developer, Microservices, REST API, AWS, Hibernate, Kafka, Portfolio" />
+  <meta name="author" content="Deepak Sahu" />
+  <meta property="og:title" content="Deepak Sahu | Java Full Stack Developer" />
+  <meta property="og:description" content="3+ years building scalable Java applications with Spring Boot, Microservices, and AWS." />
+  <meta property="og:type" content="website" />
+  <title>Deepak Sahu | Java Full Stack Developer</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    // EmailJS Config — replace with your actual keys
+    window.EMAILJS_CONFIG = {
+      serviceId: 'YOUR_SERVICE_ID',
+      templateId: 'YOUR_TEMPLATE_ID',
+      publicKey: 'YOUR_PUBLIC_KEY'
+    };
+    // Initialize EmailJS
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+        emailjs.init(window.EMAILJS_CONFIG.publicKey);
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════
+       ANIMATED BACKGROUND ORBS
+  ══════════════════════════════════════ -->
+  <div class="bg-animated">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       CUSTOM CURSOR
+  ══════════════════════════════════════ -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ══════════════════════════════════════
+       SCROLL PROGRESS BAR
+  ══════════════════════════════════════ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════════════════════════════════
+       1. LOADER
+  ══════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-logo">DS.</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-text">INITIALIZING PORTFOLIO</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       2. STICKY NAVBAR
+  ══════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">DS.JAVA</a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme"></button>
+
+        <!-- Hamburger -->
+        <button class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       3. HERO SECTION
+  ══════════════════════════════════════ -->
+  <section id="hero" class="section">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-tag" data-aos="fade-right">
+            <span class="hero-tag-dot"></span>
+            Available for opportunities
+          </div>
+
+          <h1 class="hero-name" data-aos="fade-right" data-aos-delay="100">
+            Hi, I'm<br />
+            <span class="gradient-text">Deepak Sahu</span>
+          </h1>
+
+          <div class="hero-role" data-aos="fade-right" data-aos-delay="200">
+            <span id="typed-text"></span>
+            <span class="cursor-blink"></span>
+          </div>
+
+          <p class="hero-desc" data-aos="fade-right" data-aos-delay="300">
+            Passionate Java Full Stack Developer with <strong>3+ years</strong> of experience crafting scalable, 
+            high-performance applications using Spring Boot, Microservices, and cloud technologies. 
+            I turn complex problems into elegant solutions.
+          </p>
+
+          <div class="hero-buttons" data-aos="fade-right" data-aos-delay="400">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-rocket"></i> View Projects
+            </a>
+            <a href="deepak8962138240@gmail.com" class="btn btn-secondary">
+              <i class="fas fa-envelope"></i> Let's Connect
+            </a>
+            <a href="https://github.com/deepak7974400" target="_blank" rel="noopener" class="btn btn-secondary">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+            <div class="stat-item">
+              <div class="stat-number" data-counter="3" data-suffix="+">0+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-counter="4" data-suffix="+">0+</div>
+              <div class="stat-label">Projects Shipped</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-counter="15" data-suffix="+">0+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="200">
+          <div class="avatar-frame">
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring avatar-ring-2"></div>
+            <div class="avatar-circle">
+              <img src="image/deepaksah.jpeg" alt="">
+            </div>
+            <!-- Floating Tech Badges -->
+            <div class="tech-badge tech-badge-1">☕ Spring Boot</div>
+            <div class="tech-badge tech-badge-2">☁️ AWS</div>
+            <div class="tech-badge tech-badge-3">🐳 Docker</div>
+            <div class="tech-badge tech-badge-4">📡 Kafka</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       4. ABOUT SECTION
+  ══════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">// Who I Am</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">About <span>Me</span></h2>
+      <div class="section-divider" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="about-grid">
+        <!-- Avatar -->
+        <div class="about-img-wrap" data-aos="fade-right">
+          <div class="about-avatar glass-card">
+            <img src="image/deepaksah.jpeg" alt="" height="99" >
+            <div class="about-badge">
+              <span class="about-badge-num">3+</span>
+              <span class="about-badge-label">Years<br/>of Code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about-text" data-aos="fade-left">
+
+          
+          <p>
+            I'm a <strong style="color:var(--text-primary)">Java Full Stack Developer</strong> with over 3 years of hands-on experience 
+            building enterprise-grade web applications. My expertise spans the entire development lifecycle — 
+            from architecting robust backend services to delivering clean, responsive frontends.
+          </p>
+          <p>
+            I specialize in building scalable microservices architectures using <strong style="color:var(--accent-1)">Spring Boot</strong>, 
+            implementing secure REST APIs with <strong style="color:var(--accent-2)">JWT & Spring Security</strong>, and deploying 
+            cloud-native solutions on <strong style="color:var(--accent-3)">AWS</strong>. I'm passionate about writing clean, 
+            maintainable code and continuously learning new technologies.
+          </p>
+
+          <!-- Info Grid -->
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Name</span>
+              <span class="info-value">Deepak Sahu</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Role</span>
+              <span class="info-value">Java Full Stack Developer</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Experience</span>
+              <span class="info-value">3+ Years</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Bangalore</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <span class="info-value">deepak8962138240@email.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Status</span>
+              <span class="info-value" style="color:var(--accent-3)">● Open to Work</span>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <a href="7974400824" class="btn btn-primary">
+
+              <i class="fas fa-paper-plane"></i> Hire Me
+            </a>
+            <a href="image/Deepak__java_resume.pdf" download class="btn btn-secondary">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       5. SKILLS SECTION
+  ══════════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label text-center" data-aos="fade-up">// What I Know</div>
+      <h2 class="section-title text-center" data-aos="fade-up" data-aos-delay="100">Tech <span>Stack</span></h2>
+      <div class="section-divider" style="margin-left:auto;margin-right:auto;" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="skills-grid">
+
+        <!-- Backend -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-category-header">
+            <div class="skill-icon">☕</div>
+            <span class="skill-category-name">Backend Development</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Spring Security</span>
+            <span class="skill-tag">Hibernate</span>
+            <span class="skill-tag">JPA</span>
+            <span class="skill-tag">Maven</span>
+            <span class="skill-tag">JWT</span>
+          </div>
+        </div>
+
+        <!-- Architecture -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-category-header">
+            <div class="skill-icon">🏗️</div>
+            <span class="skill-category-name">Architecture & APIs</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">API Gateway</span>
+            <span class="skill-tag">Service Discovery</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-category-header">
+            <div class="skill-icon">🗄️</div>
+            <span class="skill-category-name">Database</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JPA Queries</span>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-category-header">
+            <div class="skill-icon">☁️</div>
+            <span class="skill-category-name">Cloud & DevOps</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Linux</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-category-header">
+            <div class="skill-icon">🎨</div>
+            <span class="skill-category-name">Frontend</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Thymeleaf</span>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="glass-card skill-category" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-category-header">
+            <div class="skill-icon">🔧</div>
+            <span class="skill-category-name">Tools & Practices</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">IntelliJ IDEA</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Swagger</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Agile/Scrum</span>
+            <span class="skill-tag">TDD</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       6. EXPERIENCE TIMELINE
+  ══════════════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">// My Journey</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Work <span>Experience</span></h2>
+      <div class="section-divider" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Current Role -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card" style="padding: 28px;">
+            <div class="timeline-date">
+              <i class="fas fa-calendar-alt" style="margin-right:6px;"></i>2022 — Present
+            </div>
+            <div class="timeline-title">Java Full Stack Developer</div>
+            <div class="timeline-company">
+              <i class="fas fa-building" style="margin-right:6px;"></i>Tech Solutions Pvt. Ltd. · Full-time
+            </div>
+            <div class="timeline-desc">
+              Architected and developed scalable microservices-based applications using Spring Boot and Kafka. 
+              Implemented secure JWT-based authentication systems, designed RESTful APIs consumed by 
+              mobile and web clients, and deployed applications on AWS using Docker containers. 
+              Led backend development for E-Commerce and Real Estate platforms serving thousands of users.
+            </div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Spring Boot</span>
+              <span class="timeline-tag">Microservices</span>
+              <span class="timeline-tag">Kafka</span>
+              <span class="timeline-tag">AWS</span>
+              <span class="timeline-tag">Docker</span>
+              <span class="timeline-tag">MySQL</span>
+              <span class="timeline-tag">JWT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous Role -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card" style="padding: 28px;">
+            <div class="timeline-date">
+              <i class="fas fa-calendar-alt" style="margin-right:6px;"></i>2021 — 2022
+            </div>
+            <div class="timeline-title">Junior Java Developer</div>
+            <div class="timeline-company">
+              <i class="fas fa-building" style="margin-right:6px;"></i>Digital Innovations Inc. · Full-time
+            </div>
+            <div class="timeline-desc">
+              Developed and maintained Java-based backend services using Spring MVC and Hibernate. 
+              Built REST APIs for web and mobile applications, worked with MySQL databases, 
+              and contributed to Agile/Scrum sprint planning and delivery.
+            </div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Java</span>
+              <span class="timeline-tag">Spring MVC</span>
+              <span class="timeline-tag">Hibernate</span>
+              <span class="timeline-tag">MySQL</span>
+              <span class="timeline-tag">REST APIs</span>
+              <span class="timeline-tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internship -->
+        <div class="timeline-item" style="margin-bottom:0;">
+          <div class="timeline-dot"></div>
+          <div class="glass-card" style="padding: 28px;">
+            <div class="timeline-date">
+              <i class="fas fa-calendar-alt" style="margin-right:6px;"></i>2020 — 2021
+            </div>
+            <div class="timeline-title">Software Development Intern</div>
+            <div class="timeline-company">
+              <i class="fas fa-building" style="margin-right:6px;"></i>StartUp Labs · Internship
+            </div>
+            <div class="timeline-desc">
+              Gained hands-on experience with Java, Spring Boot fundamentals, and database design. 
+              Assisted senior developers in building REST APIs and implementing frontend UI with HTML, CSS, and JavaScript.
+            </div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Java</span>
+              <span class="timeline-tag">Spring Boot</span>
+              <span class="timeline-tag">HTML/CSS</span>
+              <span class="timeline-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       7. SERVICES SECTION
+  ══════════════════════════════════════ -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-label text-center" data-aos="fade-up">// What I Offer</div>
+      <h2 class="section-title text-center" data-aos="fade-up" data-aos-delay="100">My <span>Services</span></h2>
+      <div class="section-divider" style="margin-left:auto;margin-right:auto;" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="services-grid">
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-num">01</div>
+          <div class="service-icon-wrap">🚀</div>
+          <div class="service-title">Backend Development</div>
+          <div class="service-desc">
+            Building high-performance, scalable backend systems using Java, Spring Boot, and Hibernate. 
+            From monolithic to microservices architectures — crafted for reliability and speed.
+          </div>
+        </div>
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-num">02</div>
+          <div class="service-icon-wrap">🔌</div>
+          <div class="service-title">REST API Design</div>
+          <div class="service-desc">
+            Designing clean, documented, and secure RESTful APIs. JWT authentication, role-based 
+            access control, Swagger docs, and thorough Postman testing are standard in my workflow.
+          </div>
+        </div>
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-num">03</div>
+          <div class="service-icon-wrap">🏗️</div>
+          <div class="service-title">Microservices Architecture</div>
+          <div class="service-desc">
+            Decomposing monoliths into loosely-coupled microservices with Kafka event streaming, 
+            API gateways, service discovery, and Docker-based deployment pipelines.
+          </div>
+        </div>
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-num">04</div>
+          <div class="service-icon-wrap">☁️</div>
+          <div class="service-title">Cloud & DevOps</div>
+          <div class="service-desc">
+            Deploying applications to AWS (EC2, S3, RDS) with Docker containerization and 
+            CI/CD pipelines via GitHub Actions. Ensuring high availability and scalability in production.
+          </div>
+        </div>
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-num">05</div>
+          <div class="service-icon-wrap">🎨</div>
+          <div class="service-title">Full Stack Development</div>
+          <div class="service-desc">
+            End-to-end web application development — from Spring Boot APIs to responsive, 
+            modern frontends using HTML5, CSS3, JavaScript, and Tailwind CSS.
+          </div>
+        </div>
+
+        <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-num">06</div>
+          <div class="service-icon-wrap">🔍</div>
+          <div class="service-title">Code Review & Consulting</div>
+          <div class="service-desc">
+            Technical consulting on Java architecture decisions, performance optimization, 
+            security hardening, and best practices for enterprise Java applications.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       8. PROJECTS SECTION
+  ══════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">// What I've Built</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Featured <span>Projects</span></h2>
+      <div class="section-divider" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="projects-grid">
+
+        <!-- E-Commerce -->
+        <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-gradient-bar"></div>
+          <div class="project-header">
+            <div class="project-icon">🛒</div>
+            <div class="project-links">
+              <a href="https://github.com/deepaksahu" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" title="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">E-Commerce Application</div>
+            <div class="project-desc">
+              Full-featured e-commerce platform with product catalogue, cart management, 
+              order processing, payment gateway integration, and real-time inventory updates 
+              using Kafka event streaming. Includes admin panel for inventory management.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Spring Boot</span>
+              <span class="stack-tag">Microservices</span>
+              <span class="stack-tag">Kafka</span>
+              <span class="stack-tag">JWT</span>
+              <span class="stack-tag">MySQL</span>
+              <span class="stack-tag">Docker</span>
+              <span class="stack-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-gradient-bar"></div>
+          <div class="project-header">
+            <div class="project-icon">🏠</div>
+            <div class="project-links">
+              <a href="https://github.com/deepaksahu" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" title="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Real Estate Application</div>
+            <div class="project-desc">
+              Comprehensive real estate portal with property listings, advanced search & filters, 
+              virtual tour scheduling, agent management, and a mortgage calculator. 
+              Features geolocation-based property search and image upload to AWS S3.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Spring Boot</span>
+              <span class="stack-tag">Hibernate</span>
+              <span class="stack-tag">REST API</span>
+              <span class="stack-tag">MySQL</span>
+              <span class="stack-tag">AWS S3</span>
+              <span class="stack-tag">Spring Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Airline Ticket Booking -->
+        <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-gradient-bar"></div>
+          <div class="project-header">
+            <div class="project-icon">✈️</div>
+            <div class="project-links">
+              <a href="https://github.com/deepaksahu" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" title="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Airline Ticket Booking</div>
+            <div class="project-desc">
+              Flight search, seat selection, and booking system with real-time availability, 
+              dynamic pricing engine, PNR generation, email confirmation, and cancellation & 
+              refund management. Built using microservices for flight, booking, and payment modules.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Java</span>
+              <span class="stack-tag">Spring Boot</span>
+              <span class="stack-tag">Microservices</span>
+              <span class="stack-tag">REST API</span>
+              <span class="stack-tag">MySQL</span>
+              <span class="stack-tag">JWT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Booking -->
+        <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-gradient-bar"></div>
+          <div class="project-header">
+            <div class="project-icon">🏨</div>
+            <div class="project-links">
+              <a href="https://github.com/deepaksahu" target="_blank" rel="noopener" class="project-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="project-link" title="Live Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">Hotel Booking System</div>
+            <div class="project-desc">
+              End-to-end hotel reservation platform with room browsing, availability calendar, 
+              booking management, guest profiles, loyalty points system, and automated email 
+              notifications. Admin dashboard for revenue analytics and room management.
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">Spring Boot</span>
+              <span class="stack-tag">Spring Security</span>
+              <span class="stack-tag">Hibernate</span>
+              <span class="stack-tag">MySQL</span>
+              <span class="stack-tag">Docker</span>
+              <span class="stack-tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       9. GITHUB & CERTIFICATIONS
+  ══════════════════════════════════════ -->
+  <section id="github" class="section">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">// Open Source & Achievements</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">GitHub & <span>Certifications</span></h2>
+      <div class="section-divider" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="github-certs-grid">
+
+        <!-- GitHub Stats -->
+        <div class="github-stats-wrap" data-aos="fade-right">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=deepaksahu&show_icons=true&theme=transparent&hide_border=true&title_color=63b3ff&icon_color=a78bfa&text_color=8fa3c0&bg_color=0a0f1e00"
+            alt="Deepak Sahu GitHub Stats"
+            class="github-img"
+            loading="lazy"
+          />
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=deepaksahu&theme=transparent&hide_border=true&stroke=0a0f1e00&background=0a0f1e00&ring=63b3ff&fire=a78bfa&currStreakLabel=63b3ff&sideNums=8fa3c0&currStreakNum=f0f4ff&dates=4a5568&sideLabels=8fa3c0"
+            alt="GitHub Streak Stats"
+            class="github-img"
+            loading="lazy"
+          />
+          <a href="https://github.com/deepak7974400" target="_blank" rel="noopener" class="btn btn-secondary" style="align-self:flex-start;">
+            <i class="fab fa-github"></i> Visit GitHub Profile
+          </a>
+        </div>
+
+        <!-- Certifications -->
+        <div data-aos="fade-left">
+          <div class="certs-list">
+
+            <div class="glass-card cert-item">
+              <div class="cert-icon">☁️</div>
+              <div class="cert-info">
+                <div class="cert-name">AWS Certified Developer – Associate</div>
+                <div class="cert-issuer">Amazon Web Services · 2023</div>
+              </div>
+            </div>
+
+            <div class="glass-card cert-item">
+              <div class="cert-icon">☕</div>
+              <div class="cert-info">
+                <div class="cert-name">Oracle Certified Professional: Java SE Developer</div>
+                <div class="cert-issuer">Oracle · 2022</div>
+              </div>
+            </div>
+
+            <div class="glass-card cert-item">
+              <div class="cert-icon">🌱</div>
+              <div class="cert-info">
+                <div class="cert-name">Spring Professional Certification</div>
+                <div class="cert-issuer">VMware (Pivotal) · 2022</div>
+              </div>
+            </div>
+
+            <div class="glass-card cert-item">
+              <div class="cert-icon">🐳</div>
+              <div class="cert-info">
+                <div class="cert-name">Docker Certified Associate</div>
+                <div class="cert-issuer">Docker Inc. · 2023</div>
+              </div>
+            </div>
+
+            <div class="glass-card cert-item">
+              <div class="cert-icon">🔐</div>
+              <div class="cert-info">
+                <div class="cert-name">Microservices with Spring Boot & Spring Cloud</div>
+                <div class="cert-issuer">Udemy · 2021</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       10. RESUME SECTION
+  ══════════════════════════════════════ -->
+  <section id="resume" class="section">
+    <div class="container">
+      <div class="section-label text-center" data-aos="fade-up">// Credentials</div>
+      <h2 class="section-title text-center" data-aos="fade-up" data-aos-delay="100">My <span>Resume</span></h2>
+      <div class="section-divider" style="margin-left:auto;margin-right:auto;" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="glass-card resume-card" data-aos="zoom-in" data-aos-delay="200">
+        <span class="resume-icon">📄</span>
+        <div class="resume-title">Download My Resume</div>
+        <div class="resume-desc">
+          Get a complete overview of my experience, skills, education, and projects 
+          in a professionally formatted PDF. Last updated in 2024.
+        </div>
+        <div class="resume-btn-wrap">
+          <a href="image/Deepak__java_resume.pdf" download class="btn btn-primary">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <a href="image/Deepak__java_resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fas fa-eye"></i> View Online
+          </a>
+          <a href="https://www.linkedin.com/in/deepaksahu" target="_blank" rel="noopener" class="btn btn-secondary">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       11. CONTACT SECTION
+  ══════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label" data-aos="fade-up">// Let's Talk</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Get In <span>Touch</span></h2>
+      <div class="section-divider" data-aos="fade-up" data-aos-delay="150"></div>
+
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div data-aos="fade-right">
+          <p style="color:var(--text-secondary); margin-bottom:32px; line-height:1.8;">
+            I'm currently open to new opportunities — whether it's a full-time role, 
+            freelance project, or technical collaboration. Feel free to reach out!
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">deepak8962138240@email.com</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📱</div>
+              <div>
+                <div class="contact-item-label">Phone / WhatsApp</div>
+                <div class="contact-item-value">+91 7974400824</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">India · Remote Friendly</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact-social" style="margin-top:28px;">
+            <a href="https://github.com/deepak7974400" target="_blank" rel="noopener" class="social-btn" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/deepaksahu" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/deepaksahu" target="_blank" rel="noopener" class="social-btn" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:deepak8962138240@gmail.com" class="social-btn" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/91 7974400824" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div data-aos="fade-left">
+          <form id="contact-form" class="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" name="name" class="form-input"
+                  placeholder="Deepak Sahu" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="email" class="form-input"
+                  placeholder="you@example.com" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" class="form-input"
+                  placeholder="+91 9XXXXXXXXX" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="subject" class="form-input"
+                  placeholder="Job Opportunity / Collaboration" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" class="form-textarea"
+                placeholder="Hi Deepak, I'd like to discuss..." required></textarea>
+            </div>
+
+            <div id="form-status"></div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Email
+              </button>
+              <button type="button" id="whatsapp-send" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Send WhatsApp
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       12. FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo">DS.</a>
+        <div class="footer-copy">
+          © 2024 Deepak Sahu · Built with ❤️ &amp; Java passion
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/deepak7974400" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       FLOATING BUTTONS
+  ══════════════════════════════════════ -->
+  <!-- WhatsApp Float -->
+  <a id="whatsapp-float" href="https://wa.me/7974400824?text=Hi%20Deepak!%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect."
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+
+  <!-- Main JS -->
+  <script src="/main.js"></script>
+
+</body>
+</html>
